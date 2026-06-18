@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   CreditCard,
-  Download,
   Mail,
   ShoppingCart,
   Wifi,
@@ -24,7 +23,6 @@ import {
 import { JsonLd } from '@/components/ui/JsonLd';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import { buildMetadata } from '@/lib/metadata';
 import { SETUP_FAQ_ITEMS } from '@/lib/faq-data';
 

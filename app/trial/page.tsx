@@ -14,7 +14,6 @@ import {
   Tv,
   Users,
 } from 'lucide-react';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 
 const includes = [

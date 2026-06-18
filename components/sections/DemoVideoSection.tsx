@@ -1,3 +1,5 @@
+import { Play } from 'lucide-react';
+
 const DEMO_VIDEO_URL = 'https://player.vimeo.com/video/916781453?autoplay=1&muted=1&loop=1';
 
 export function DemoVideoSection() {

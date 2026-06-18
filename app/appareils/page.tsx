@@ -4,7 +4,6 @@ import {
   Tv,
   Smartphone,
   Monitor,
-  Tablet,
   Wifi,
   CheckCircle2,
   ArrowRight,

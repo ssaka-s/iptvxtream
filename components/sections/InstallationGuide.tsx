@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, CheckCircle2, AlertTriangle, Wifi, ArrowUpRight } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                               */

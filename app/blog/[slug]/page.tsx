@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     ...base,
     openGraph: {
       ...base.openGraph,
+      type: 'article',
       publishedTime: new Date(post.date).toISOString(),
       modifiedTime: new Date(post.date).toISOString(),
       authors: ['OffreIPTV'],
