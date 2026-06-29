@@ -3,33 +3,51 @@
 import { useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/Button';
 
-export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+type Status = 'idle' | 'sending' | 'success' | 'error';
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+export function ContactForm() {
+  const [status, setStatus] = useState<Status>('idle');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const name = data.get('name') as string;
-    const email = data.get('email') as string;
-    const message = data.get('message') as string;
-    const subject = encodeURIComponent(`Contact OffreIPTV — ${name}`);
-    const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:support@example.fr?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setStatus('sending');
+
+    const data = new FormData(e.currentTarget);
+    const payload = {
+      name: data.get('name') as string,
+      email: data.get('email') as string,
+      message: data.get('message') as string,
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   }
 
   const fieldCls =
     'mt-2 w-full rounded-lg border border-gray-200 bg-surface px-4 py-3 text-ink focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-glow';
 
-  if (submitted) {
+  if (status === 'success') {
     return (
-      <p className="rounded-2xl border border-gray-200 bg-surface p-6 text-center text-muted shadow-card">
-        Votre client mail va s&apos;ouvrir. Si ce n&apos;est pas le cas, écrivez-nous à{' '}
-        <a href="mailto:support@example.fr" className="text-brand-blue underline">
-          support@example.fr
-        </a>
-      </p>
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center shadow-card">
+        <p className="text-2xl">✅</p>
+        <h3 className="mt-2 text-lg font-bold text-ink">Message envoyé !</h3>
+        <p className="mt-1 text-sm text-muted">
+          Nous avons bien reçu votre message et vous répondrons sous 24 à 48 h.
+        </p>
+      </div>
     );
   }
 
@@ -56,8 +74,24 @@ export function ContactForm() {
         </label>
         <textarea id="message" name="message" rows={5} required className={fieldCls} />
       </div>
-      <Button type="submit" variant="primary" className="w-full justify-center">
-        Envoyer le message
+
+      {status === 'error' && (
+        <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">
+          Une erreur est survenue. Veuillez réessayer ou nous écrire à{' '}
+          <a href="mailto:contact@iptv-xtream.com" className="underline">
+            contact@iptv-xtream.com
+          </a>
+          .
+        </p>
+      )}
+
+      <Button
+        type="submit"
+        variant="primary"
+        className="w-full justify-center"
+        disabled={status === 'sending'}
+      >
+        {status === 'sending' ? 'Envoi en cours…' : 'Envoyer le message'}
       </Button>
     </form>
   );

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Check, Star } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 
+const WHATSAPP_NUMBER = '12267051311';
+
 interface DurationPlan {
   name: string;
   pass: string;
@@ -97,6 +99,15 @@ function PriceCard({ plan, features }: { plan: DurationPlan; features: string[] 
         ].join(' ')}
       >
         Sélectionner ce pack
+      </a>
+
+      <a
+        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Bonjour, je souhaite commander le ${plan.name} (${plan.pass}) à ${plan.price}€. Pouvez-vous m'aider ?`)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-3 block w-full rounded-full bg-[#25D366] py-3 text-center text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#1ebe5d]"
+      >
+        Commander via WhatsApp
       </a>
     </div>
   );
