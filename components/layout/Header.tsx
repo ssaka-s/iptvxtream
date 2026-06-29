@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, Tv, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { NAV_LINKS } from '@/lib/constants';
+import { NAV_LINKS, WHATSAPP_TRIAL_URL } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 
 export function Header() {
@@ -57,7 +57,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button href="/trial" size="sm" variant="primary">
+          <Button href={WHATSAPP_TRIAL_URL} size="sm" variant="primary" target="_blank" rel="noopener noreferrer">
             Essai gratuit
           </Button>
         </div>
@@ -98,7 +98,7 @@ export function Header() {
               </li>
             ))}
             <li className="pt-2">
-              <Button href="/trial" className="w-full justify-center" variant="primary">
+              <Button href={WHATSAPP_TRIAL_URL} className="w-full justify-center" variant="primary" target="_blank" rel="noopener noreferrer">
                 Essai gratuit
               </Button>
             </li>

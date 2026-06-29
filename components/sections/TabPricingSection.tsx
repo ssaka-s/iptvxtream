@@ -17,7 +17,7 @@ const STANDARD: DurationPlan[] = [
   { name: 'Pack Neptune', pass: 'PASS 1 MOIS',  price: 15 },
   { name: 'Pack Uranus',  pass: 'PASS 3 MOIS',  price: 25 },
   { name: 'Pack Venus',   pass: 'PASS 6 MOIS',  price: 35 },
-  { name: 'Pack Jupiter', pass: 'PASS 12 MOIS', price: 45, recommended: true },
+  { name: 'Pack Jupiter', pass: 'PASS 12 MOIS', price: 49, recommended: true },
 ];
 
 const PREMIUM: DurationPlan[] = [

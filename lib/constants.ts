@@ -22,6 +22,9 @@ export const FOOTER_LINKS = [
   { href: '/dmca', label: 'DMCA' },
 ] as const;
 
+export const WHATSAPP_TRIAL_URL =
+  'https://wa.me/12267051311?text=Bonjour%2C%20je%20souhaite%20demander%20un%20essai%20gratuit%20IPTV%2C%20merci.';
+
 export const CHECKOUT_URLS = {
   basic: process.env.NEXT_PUBLIC_CHECKOUT_URL_BASIC ?? '',
   standard: process.env.NEXT_PUBLIC_CHECKOUT_URL_STANDARD ?? '',

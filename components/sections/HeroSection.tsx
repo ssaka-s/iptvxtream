@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { WHATSAPP_TRIAL_URL } from '@/lib/constants';
 
 export function HeroSection() {
   return (
@@ -33,12 +34,14 @@ export function HeroSection() {
                 service de TV en streaming
               </Link>
               , sans engagement, sur Smart TV, mobile, tablette ou navigateur. Découvrez notre{' '}
-              <Link
-                href="/trial"
+              <a
+                href={WHATSAPP_TRIAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-brand-blue underline underline-offset-2 hover:text-brand-dark"
               >
                 essai gratuit
-              </Link>
+              </a>
               , comparez nos{' '}
               <Link
                 href="/offre"
@@ -56,7 +59,7 @@ export function HeroSection() {
               .
             </p>
             <div className="mt-10 flex max-w-md flex-col gap-4">
-              <Button href="/trial" size="lg" className="w-full justify-center sm:w-auto">
+              <Button href={WHATSAPP_TRIAL_URL} size="lg" className="w-full justify-center sm:w-auto" target="_blank" rel="noopener noreferrer">
                 Essai gratuit 24 h
               </Button>
               <Button

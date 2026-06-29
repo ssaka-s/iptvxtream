@@ -210,7 +210,7 @@ export default function CommentCaMarchePage() {
             {/* right: card buttons */}
             <div className="relative mt-10 flex flex-col gap-4 sm:flex-row lg:mt-0 lg:flex-col xl:flex-row">
               <Link
-                href="/trial"
+                href="https://wa.me/12267051311?text=Bonjour%2C%20je%20souhaite%20demander%20un%20essai%20gratuit%20IPTV%2C%20merci." target="_blank" rel="noopener noreferrer"
                 className="flex min-w-[200px] items-center justify-between rounded-2xl bg-white px-6 py-4 font-semibold text-[#4524DB] transition-colors hover:bg-white/90"
               >
                 <span>Essai gratuit 24 h</span>
@@ -483,7 +483,7 @@ export default function CommentCaMarchePage() {
             {/* right: card buttons */}
             <div className="relative mt-10 flex flex-col gap-4 sm:flex-row lg:mt-0 lg:flex-col xl:flex-row">
               <Link
-                href="/trial"
+                href="https://wa.me/12267051311?text=Bonjour%2C%20je%20souhaite%20demander%20un%20essai%20gratuit%20IPTV%2C%20merci." target="_blank" rel="noopener noreferrer"
                 className="flex min-w-[200px] items-center justify-between rounded-2xl bg-white px-6 py-4 font-semibold text-[#4524DB] transition-colors hover:bg-white/90"
               >
                 <span>Essai gratuit 24 h</span>

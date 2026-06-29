@@ -72,7 +72,7 @@ const STANDARD_PACKS: Pack[] = [
     name: 'Pack Jupiter',
     pass: 'PASS 12 MOIS',
     duration: '12 mois',
-    price: 45,
+    price: 49,
     recommended: true,
     features: [
       'Streaming Full HD (1080p)',
@@ -211,8 +211,10 @@ function PackCard({ pack, tier }: { pack: Pack; tier: string }) {
         >
           Commander via WhatsApp
         </a>
-        <Link
-          href="/trial"
+        <a
+          href="https://wa.me/12267051311?text=Bonjour%2C%20je%20souhaite%20demander%20un%20essai%20gratuit%20IPTV%2C%20merci."
+          target="_blank"
+          rel="noopener noreferrer"
           className={[
             'block w-full rounded-full border py-3 text-center text-sm font-bold transition-colors',
             pack.recommended
@@ -221,7 +223,7 @@ function PackCard({ pack, tier }: { pack: Pack; tier: string }) {
           ].join(' ')}
         >
           Demander un essai gratuit
-        </Link>
+        </a>
       </div>
     </div>
   );

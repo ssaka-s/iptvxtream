@@ -343,7 +343,7 @@ export default function ChainesPage() {
                 Voir les offres <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
               <Link
-                href="/trial"
+                href="https://wa.me/12267051311?text=Bonjour%2C%20je%20souhaite%20demander%20un%20essai%20gratuit%20IPTV%2C%20merci." target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-[#4524DB] px-7 py-3 text-sm font-semibold text-[#4524DB] transition-all hover:bg-[#4524DB]/5"
               >
                 Essai gratuit
